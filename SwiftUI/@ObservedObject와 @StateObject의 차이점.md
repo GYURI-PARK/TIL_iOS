@@ -1,4 +1,4 @@
-## @StateObject, @ObservedObject 정확히 알고 사용하기 !
+## @ObservedObject, @StateObject 정확히 알고 사용하기 !
 
 `@StateObject`와 `@ObservedObject` 모두 관찰 중인 객체의 변경에 반응해서 화면을 업데이트할 수 있게 해주는 **프로퍼티 래퍼**입니다. 사실 대부분의 경우 @ObservedObject를 사용해왔어서 그동안 둘의 차이점을 구분할 필요성에 대해 깨닫지 못했습니다.
 </br>
@@ -123,6 +123,7 @@ ObservedObject
 </br>
 
 StateObject
+- WWDC2020에서 공개된 개념으로 SwiftUI가 View를 다시 랜더링할 때 실수로 취소되는 것을 방지해줍니다.
 - StateObject를 사용하면 해당 객체는 뷰가 처음 초기화될 때 생성되며, 뷰가 소멸될 때까지 유지됩니다.
 - 이는 뷰의 수명과 독립적으로 객체를 유지하고자 할 때 유용합니다. 예를 들어, 뷰가 다시 렌더링되더라도 객체를 다시 만들지 않고 유지하고자 할 때 유용합니다.
 
