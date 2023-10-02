@@ -1,4 +1,4 @@
-## @ObservedObject, @StateObject 정확히 알고 사용하기 !
+## ✨ @ObservedObject, @StateObject 정확히 구분해서 사용하기 !
 
 `@StateObject`와 `@ObservedObject` 모두 관찰 중인 객체의 변경에 반응해서 화면을 업데이트할 수 있게 해주는 **프로퍼티 래퍼**입니다. 사실 대부분의 경우 @ObservedObject를 사용해왔어서 그동안 둘의 차이점을 구분할 필요성에 대해 깨닫지 못했습니다.
 </br>
