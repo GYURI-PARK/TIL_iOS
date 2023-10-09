@@ -4,7 +4,7 @@
 </br>
 </br>
 
-### @ObservedObject란?
+## @ObservedObject란?
 
 <img width="704" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/033eef65-92a3-490f-a74a-db1b6b7199be">
 
@@ -46,7 +46,7 @@ struct CounterView: View {
 </br>
 </br>
 
-### @StateObject란?
+## @StateObject란?
 
 앞서 나온 코드를 @ObservedObject 대신 @StateObject를 사용해도 문제가 발생하지 않습니다 ! </br>
 
@@ -109,7 +109,7 @@ struct RandomNumberView: View {
 
 </br>
 
-### ✨ 결론
+## ✨ 결론
 
 SwiftUI가 화면을 만들거나 다시 그릴 수 있는 가능성이 있는 경우엔 내부에 `@ObservedObject`를 쓰는 것은 안전하지 않습니다. `@ObservedObject` 객체를 외부에서 주입하는 것이 아니라면 `@StateObject`를 사용하는 것이 화면이 다시 그려져도 항상 같은 결과를 얻을 수 있을 것입니다.
 따라서 `@StateObject`를 사용하면 `@ObservedObject`를 생성하는 화면에서도 일관된 결과를 보장할 수 있습니다.
