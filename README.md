@@ -11,6 +11,7 @@
 
 - [SwiftUI에서의 데이터 흐름 - @State, @Binding](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/SwiftUI에서의%20데이터%20흐름.md)
 - [@ObservedObject와 @StateObject의 차이점](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/@ObservedObject와%20@StateObject의%20차이점.md)
+- [@GestureState](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/%40GestureState.md)
 
 </br>
 </br>
