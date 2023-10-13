@@ -68,4 +68,85 @@ struct SimpleLongPressGestureView: View {
 
 추가로 녹음 기능의 경우 시간이 정해져 있는 것이 아니라 사용자가 원할 때 손을 떼기 때문에 `minimumDuration`을 `.infinity`로 설정해주면 된다.
 
+</br>
+</br>
 
+
+## 💡 응용
+위에서 녹음 기능의 경우 사용자가 탭을 유지하는 동안에 녹음이 진행되고 손을 떼는 동시에 녹음이 중지되어야한다. 하지만 위에서 언급에 `minimumDuration`을 `.infinity`로 설정할 경우 `.onEnded` 매서드를 인식하지 못해 tapGesture가 끝이 났을 경우를 처리하지 못하였다. 아래의 예시를 살펴보자. </br>
+
+```swift
+struct GestureView: View {
+    @GestureState var press = false
+    @State var show = false
+
+    var body: some View {
+        Image(systemName: "camera.fill")
+            .foregroundColor(.white)
+            .frame(width: 60, height: 60)
+            .background(show ? Color.black : Color.blue)
+            .mask(Circle())
+            .gesture(
+                LongPressGesture(minimumDuration: .infinity)
+                    .updating($press) { currentState, gestureState, transaction in
+                        gestureState = currentState
+                    }
+                    .onEnded { value in
+                        show.toggle()
+                        print("끝")
+                    }
+            )
+    }
+}
+```
+</br>
+
+위의 코드를 실행하면 사용자가 원하는 만큼 Long Press Gesture을 유지할 순 있지만, Press Gesture가 끝난 뒤에도 onEnded 매서드를 호출하지 못해 "끝"이 출력되지 않았다. 그래서 `.sequenced`를 사용해 Long Press Gesture 전에 하나의 제스처를 더 추가하는 방식으로 문제를 해결하고자 했다.
+
+</br>
+
+```swift
+var continuousPress: some Gesture {
+        LongPressGesture(minimumDuration: 0.1)
+            .sequenced(before: DragGesture(minimumDistance: 0, coordinateSpace: .local))
+            .updating($isDetectingContinuousPress) { value, gestureState, _ in
+                switch value {
+                case .second(true, nil):
+                    gestureState = true
+                    print("녹음 중")
+                default:
+                    break
+                }
+            }.onEnded { value in
+                switch value {
+                case .second(_, _):
+                    print("녹음 완료")
+                default:
+                    break
+                }
+            }
+    }
+```
+
+</br>
+
+- DragGesture을 첫 번째(.first) 제스처로 삽입한다.
+- `updating` 매서드에서 첫 번째 제스처가 실행되었다면(true) 두 번째 제스처(Long Press Gesture)에서 실행할 작업을 지정해준다.(.second)
+- `onEnded` 매서드에서 .second가 종료되었을 때 실행할 작업을 지정해준다.
+
+</br>
+
+```swift
+ Circle()
+	.fill(isDetectingContinuousPress ? Color.gray : Color.blue)
+	.frame(width: 100, height: 100, alignment: .center)
+	.simultaneousGesture(continuousPress)
+```
+</br>
+
+다음과 같이 simultaneousGesture를 통해 사용할 수 있다.
+
+</br>
+
+그럼에도 여전히 처음 동작에서 녹음이 진행되는 것이 아니라 두 번쨰 동작부터 녹음이 가능하다는 문제점이 발생한다. </br>
+해당 부분을 해결하게 되면 정리해 올려보겠다.
