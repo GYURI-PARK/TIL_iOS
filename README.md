@@ -3,6 +3,7 @@
 
 ## 🔆 Swift
 - [Calendar](https://github.com/GYURI-PARK/TIL_iOS/blob/main/Swift/Calendar.md)
+- [싱글톤 패턴 (Singleton Pattern)](https://github.com/GYURI-PARK/TIL_iOS/blob/main/Swift/Singleton.md)
 
 </br>
 </br>
