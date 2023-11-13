@@ -44,13 +44,24 @@ Attributes, Relationships, Fetched Properties는 모두 Entity의 프로퍼티�
 `NSManagedObjectModel`
 </br>
 
+- Entities라고 불리는 모델 객체와 다른 Entity들과의 관계를 정의한다.
 
 
 ### Managed Object Context
 
 `NSManagedObjectContext`
+</br>
+
+- Core Data Stack의 핵심으로, 데이터베이스에 있는 객체를 보고 접근하게 해주는 window이다.
+- 인스턴스에 생긴 변화를 트랙하므로, 항목을 생성, 수정 삭제 또는 검색할 수 있고 일반적으로 Core Data와 상호작용할 때 이것으로 작업한다.
 
 ### NSPersistentStoreCoordinator
 
+- 실제 데이터베이스를 관리하여 store로부터 앱의 타입의 인스턴스들을 저장하고 `fetch`한다.
 
+
+### NSPersistentContainer
+
+- Core Data Stack을 캡슐화한 컨테이너로 위의 세 가지(NSManagedObjectModel, NSManagedObjectContext, NSPersistentStoreCoordinator)를 프로퍼티로 가지고 있는 클래스이다.
+- 즉, managed object model, persistent store coordinator, managed object context의 생성을 핸들링해서 Core Data Stack의 생성과 관리를 간단하게 해준다.
 
