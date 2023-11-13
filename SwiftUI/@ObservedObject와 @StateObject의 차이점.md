@@ -130,3 +130,9 @@ StateObject
 </br>
 
 따라서 `StateObject`가 유용한 경우는 객체가 뷰가 초기화될 때 생성되어야 하지만 **뷰가 여러 번 재렌더링**될 때 유지되어야 하는 경우, **객체가 뷰의 수명과 독립적으로 유지**되어야 하는 경우. 라고 할 수 있을 것 같습니다 !
+
+</br>
+</br>
+
+[해당 공부 내용을 다음 코드 리뷰에서 활용할 수 있었다😃](https://github.com/DeveloperAcademy-POSTECH/MacC-Team11-UMM/pull/221)
+
