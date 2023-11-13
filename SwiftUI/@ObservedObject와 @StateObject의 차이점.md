@@ -134,5 +134,9 @@ StateObject
 </br>
 </br>
 
-[해당 공부 내용을 다음 코드 리뷰에서 활용할 수 있었다😃](https://github.com/DeveloperAcademy-POSTECH/MacC-Team11-UMM/pull/221)
+## 📝 회고
+
+
+해당 공부 내용을 아래의 코드 리뷰에서 활용할 수 있었습니다😃 </br>
+<img width="775" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/21d71ae8-3638-4e6c-a891-b3135a3a073b">
 
