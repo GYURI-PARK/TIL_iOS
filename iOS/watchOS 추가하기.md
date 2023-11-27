@@ -16,10 +16,12 @@
 3. watchOS 탭 선택
 4. `Watch App for iOS App`을 선택하고 다음(Next)을 클릭
 5. 타겟 옵션 창에서 프로젝트의 제품 이름(Product Name)을 입력. 알림 또는 복잡한 기능을 구현할 계획이라면 해당 확인란을 선택하고 완료(Finish)를 클릭
+
    <img width="50%" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/1683c065-5695-4aac-b5a9-d63d2ad2d36d">
    </br>
    
 6. 그런 다음 Xcode에서 새로운 스킴을 워치 타겟에 대해 활성화할 것인지 물으면 활성화(Activate)를 클릭
+   
    <img width="40%" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/55b1f8e9-b748-4dfc-abf0-d6d1edff2b13">
 
 </br>
