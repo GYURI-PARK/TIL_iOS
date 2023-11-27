@@ -103,3 +103,169 @@ App Store Connect 홈페이지의 `사용자 및 액세스` > `사용자`에서 
 </br>
 
 ### 3) Certificate Signing Request(CSR) 생성하기
+> CSR은 인증서를 발급받기 위한 일종의 요청서라고 보면 된다.
+
+</br>
+
+CSR는 맥북의 `키체인 접근 앱`에서 만들 수 있다. </br>
+
+<img width="601" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/3a4c8697-4174-4ffc-b5fa-082eed6456f3">
+
+`키체인 접근` > `인증서 지원` > `인증 기관에서 인증서 요청`을 차례로 클릭해준다. </br>
+</br>
+
+<img width="616" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/7dd2de0c-3bb3-4a01-8cc9-a23a6e0430cd">
+
+> 인증서 정보를 입력하는 창을 만나게 되는데 이때, 이메일 주소는 꼭 Apple 계정의 이메일 주소가 아니어도 된다.
+
+본인의 이메일을 입력한 후, `디스크에 저장됨`을 체크해주면 Finder에서 아래와 같은 파일이 만들어진 것을 확인할 수 있을 것이다.
+
+<img width="336" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/e5032751-5969-4c87-b4b2-852566abc7f5">
+
+</br>
+</br>
+
+### 4) 인증서(Certificates) 생성하기
+> 인증서는 Xcode에서도 만들 수 있고, Apple Developer 사이트에서도 직접 생성이 가능하다.
+
+#### 1. Xcode에서 생성하기
+<img width="255" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/47d7eff2-0e35-4914-a9b0-6c84fca1fbfe">
+ 
+> `Xcode` > `Settings`에 들어간다.
+
+<img width="694" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/1a528cbf-df0f-46ff-a0ec-bcc9796bc4aa">
+
+> `Accounts` 탭으로 이동 후 `Manage Certificates`를 클릭한다.
+
+<img width="214" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/c39567c7-3f4d-40bb-a1eb-0912bb62bddf">
+
+> 플러스 버튼을 누르면 다음과 같은 목록을 볼 수 있다.
+
+- 이 때 Apple Development(개발용), Apple Distribution(배포용) 인증서를 각각 만들어 준다.
+- 만들어진 인증서는 Apple Developer 사이트에서 확인할 수 있다.
+
+<img width="934" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/a67d09ff-6a1b-4182-a234-0675fe5a2564">
+> 애플 개발자 계정의 Certificates에 자동으로 만들어진 것을 확인할 수 있다.
+
+</br>
+</br>
+
+#### 2. 사이트에서 생성하기
+<img width="598" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/ae391c3a-b7bc-4f43-89c5-fcc4a7874632">
+
+> Apple Developer 사이트에서 플러스 버튼을 클릭해 직접 만들어 줄 수도 있다. 
+
+<img width="629" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/6219282d-f358-43ac-8853-a7b66ef56d2c">
+
+> 목적에 맞게 선택해주면 된다.
+
+- 여기서도 마찬가지로 Apple Development는 개발용, Apple Distribution은 배포용이다.
+- 각각 만들어주면 된다.
+
+<img width="1045" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/80a3bc26-ddda-4e2c-bb16-2eee30b1afb6">
+
+> 앞서 만든 CSR 파일을 업로드 한다.
+
+위 과정을 모두 거치고 나면, 새로운 인증서가 만들어진 것을 확인할 수 있다.
+둘 중 한 가지 방법을 선택해 인증서를 만들고, 해당 인증서를 클릭해 들어가게 되면 아래와 같이 `Download` 받을 수 있을 것이다.
+
+<img width="900" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/2fb22b31-0fb4-49cb-a42c-797a0ba66e11">
+</br>
+
+다운로드 받은 파일은 `.cer`형식의 파일로 아래와 같이 다운로드 항목에서 확인할 수 있다. 
+<img width="709" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/579fef3b-8c9d-459b-b1aa-4718459441d4">
+</br>
+
+만들어진 인증서는 키체인에 등록해주어야한다. </br>
+방법은 간단하게 더블클릭만 해주면 키체인이 등록되고, 맥북 키체인 접근 앱에서 확인할 수 있다.
+
+<img width="748" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/57306243-2ba8-4163-ac6e-67e36be99ce7">
+
+> 내 인증서 탭에서 확인해보면, 인증서와 해당 키가 만들어진 것을 확인할 수 있다.
+
+만들어진 인증서와 개인키 모두 팀원들에게 공유해주어야 한다. </br>
+인증서를 우클릭 후 `내보내기`를 선택한다. </br>
+내보내기를 한 곳으로 이동해 만들어진 p12 파일을 클릭하면 다음과 같이 암호를 설정하도록 되어있다. </br>
+
+<img width="489" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/e8b2a13b-8b3a-4068-b881-8f5c2e79a83a">
+
+> 해당 암호는 팀원들이 파일을 접근할 때에도 필요하므로, 팀 내 개발자들 간의 공유가 필요하다. 
+
+<img width="103" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/949e6f9b-2421-4553-8a03-d3eacfc4444a">
+
+> 암호를 생성해주고 나면 p12 확장자를 가진 파일이 생성된 것을 확인할 수 있을 것이다.
+
+</br>
+
+배포용 인증서에 대해서도 똑같은 과정을 반복해주어 p12 확장자의 파일을 만들어 주어야한다. </br>
+그렇게 만들어진 두 개의 파일(개발용, 배포용)은 카톡이나, 에어드랍, 슬랙 .. 등등을 이용해 팀원들에게 공유해주면 된다. </br>
+
+</br>
+</br>
+
+### 5) 프로비저닝 파일 생성하기
+
+프로비저닝 파일 생성 시 주의해야할 점은, 앱 안에 여러 타겟이 있는 경우, **각 타겟에 대한 Bundle ID와 프로비저닝 파일을 각각 생성**해주어야 한다. </br>
+예를 들어 iOS와 watchOS를 모두 개발하고 있다면 iOS에 대한 bundle ID, watchOS에 대한 bundle Id를 각각 만들어주어야 한다는 것이다. </br>
+
+<img width="1089" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/49f9d34c-325b-44a9-80a3-c9daca233b60">
+
+> 프로비저닝 파일은 Apple Developer 사이트에 Profiles에서 만들 수 있다.
+
+<img width="1033" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/d499a7b7-9e0f-494f-821f-196b8b0f1518">
+
+> 먼저 개발용 프로비저닝 파일을 만들어 준다. 
+
+<img width="562" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/4fceb0b8-1b8f-4d2f-8963-e5358a3e1389">
+
+> 앞에서 만들어 둔 App Id를 선택해준다.
+
+<img width="614" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/734503e2-2faa-48db-b13e-3e28f128febc">
+
+> 개발자 인증서를 선택해준다.
+
+이 때 하나라도 제대로 없다면 오류가 날 수 있기 때문에 무엇을 선택할지 잘 모르겠다면 **select all**을 선택해준다. </br>
+
+<img width="1020" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/70b9f5c5-536b-4463-b6e1-a4ff8f2e18ba">
+
+> 프로비저닝 파일 안에 포함시킬 디바이스를 등록해준다.
+
+이 때 팀원들의 실기기(macBook, iPhone 등)를 모두 선택해주면 된다. </br>
+팀원들의 기기는 `Devices`탭에서 추가할 수 있다.
+
+</br>
+
+<img width="541" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/f9965fc7-e8a0-4f9f-98db-605e98e04edb">
+
+> 프로비저닝 파일의 이름을 설정해준다.
+
+개발용과 배포용 두가지가 존재하기 때문에 프로비저닝 파일의 이름을 구분해주는 것이 좋다. </br>
+Generate시 개발용 프로비저닝 파일이 만들어지게 된다. </br>
+
+<img width="728" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/9bc7f6f1-ebc4-4c30-a5d0-db22d24d4155">
+
+> 배포용도 같은 방식으로 만들어주면 된다. 
+
+</br>
+
+만들어진 프로비저닝 파일을 download하면 `.mobileprovision`형식의 파일이 생성될 것이다.
+
+</br>
+
+### 6) 파일 공유하기
+
+앞서 만든 여러가지 파일들 중, `인증서(.p12)`와 `프로비저닝 파일(.mobileprovision)`을 팀원들에게 공유해주면 된다.
+
+</br>
+</br>
+
+## 💡 3. 다른 팀원들이 해야할 일
+
+계정 주인으로부터 받은 파일을 로컬에 저장하고, 인증서의 암호를 풀어주면 키체인에 등록되게 된다.
+</br>
+
+<img width="863" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/d07fe996-ca53-40d2-880b-189662173e6b">
+
+</br>
+
+Xcode에서 기존에 `Automatically manage signing`의 체크를 해제하고 저장한 프로비저닝 파일을 `import`해주면 팀원들 모두 같은 Bundle identifier를 사용해 개발할 수 있을 것이다.
