@@ -7,6 +7,8 @@
 - [didSet](https://github.com/GYURI-PARK/TIL_iOS/blob/main/Swift/didSet.md)
 - [removeLast() vs popLast()](https://github.com/GYURI-PARK/TIL_iOS/blob/main/Swift/removeLast()와%20popLast().md)
 - [enumerated()](https://github.com/GYURI-PARK/TIL_iOS/blob/main/Swift/enumerated().md)
+- [순열과 조합](https://github.com/GYURI-PARK/TIL_iOS/blob/main/Swift/순열과%20조합.md)
+- [딕셔너리(Dictionary)](https://github.com/GYURI-PARK/TIL_iOS/blob/main/Swift/Dictionary.md)
 
 </br>
 </br>
@@ -16,6 +18,7 @@
 - [SwiftUI에서의 데이터 흐름 - @State, @Binding](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/SwiftUI에서의%20데이터%20흐름.md)
 - [@ObservedObject와 @StateObject의 차이점](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/@ObservedObject와%20@StateObject의%20차이점.md)
 - [@GestureState](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/%40GestureState.md)
+- [ZStack vs overlay vs background](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/ZStack%2C%20overay%2C%20background.md)
 
 </br>
 </br>
