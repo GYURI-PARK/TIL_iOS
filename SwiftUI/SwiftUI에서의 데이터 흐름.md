@@ -52,6 +52,11 @@ struct ContentView: View {
 자식 뷰가 값을 변경하도록 하기 위해서는, `@Binding`을 전달해주어야 한다.
 
 </br>
+
+WWDC20 영상에 나온 말의 일부를 인용하자면, **The simplest source of truth in SwiftUI is State.** </br>
+이는 SwiftUI에서 데이터나 상태를 나타내는 가장 기본적이고 간단한 방법은 `@State` 프로퍼티 래퍼를 사용한다는 것이다.
+
+</br>
 </br>
 
 ## @Binding
