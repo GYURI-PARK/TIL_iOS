@@ -66,6 +66,30 @@ WWDC20 영상에 나온 말의 일부를 인용하자면, **The simplest source 
 
 </br>
 
+Binding에서도 WWDC20 영상의 말을 가져와보면, **In SwiftUI, the tool for sharing write-access to any source of truth is Binding.** </br>
+즉, SwiftUI에서의 `Binding`은 데이터 소스를 공유하면서 해당 데이터에 대한 쓰기 액세스를 관리하기 위해 사용되는 개념이라는 것이다. </br>
+
+<img width="935" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/7063a57d-22e0-4850-9d80-8461d63a1d2c">
+
+</br>
+</br>
+
+다음과 같이 BookView 내부에 존재하는 ProgressEditor에서도 동일한 editorConfig 데이터를 사용하고 싶다고 할 때, @State 변수를 사용하는 것은 새로운 `source of truth`를 만드는 것이 되어 
+ProgressEditor의 변경사항이 BookView에 반영되지 않는(공유되지 않는), 단일한 데이터 원천을 만든다는 것이다. </br>
+따라서 BookView와의 데이터 공유를 위해선 `Binding`이 필요하다.
+
+</br>
+
+<img width="874" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/29dcf7d7-c1a0-43d1-aa13-93eed857b718">
+
+</br>
+</br>
+
+Binding을 사용해 EditorConfig를 업데이트함으로써, ProgressEditor와 BookView는 동일한 상태를 가질 수 있게 된다. </br>
+또한 이 값들이 변경될 때 뷰가 다시 그려지게 된다. 
+
+</br>
+
 ```swift
 struct PlayerView: View {
 	@State private var isPlaying: Bool = false
