@@ -119,12 +119,13 @@ SwiftUI가 화면을 만들거나 다시 그릴 수 있는 가능성이 있는 �
 ObservedObject
 - ObservedObject를 사용하면 해당 객체는 뷰가 처음으로 초기화될 때 생성되어야 합니다.
 - 뷰가 처음 초기화될 때 생성되기 때문에 뷰의 수명과 동일한 수명을 가진 객체에 적합합니다.
+- ObservedObject does not own the life cycle of its ObservableObject.
 
 </br>
 
 StateObject
 - WWDC2020에서 공개된 개념으로 SwiftUI가 View를 다시 랜더링할 때 실수로 취소되는 것을 방지해줍니다.
-- StateObject를 사용하면 해당 객체는 뷰가 처음 초기화될 때 생성되며, 뷰가 소멸될 때까지 유지됩니다.
+- StateObject를 사용하면 해당 객체는 뷰가 처음 초기화될 때 생성되며, 뷰가 소멸될 때까지 유지됩니다. 즉, 뷰의 전체 수명 주기동안 유지한다.
 - 이는 뷰의 수명과 독립적으로 객체를 유지하고자 할 때 유용합니다. 예를 들어, 뷰가 다시 렌더링되더라도 객체를 다시 만들지 않고 유지하고자 할 때 유용합니다.
 
 </br>
