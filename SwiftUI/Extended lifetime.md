@@ -1,4 +1,4 @@
-## ✨ @SceneStorage와 AppStorage
+## ✨ @SceneStorage와 @AppStorage
 > 데이터의 수명관리는 매우 중요하다. State, StateObject, Constants로 정의된 데이터들의 경우 앱의 프로세스 수명과 연결되어 있어서,
 > 앱이 종료되고, 다시 시작될 경우에 그 값이 복원되지 않는다. 따라서 lifetime의 확장 개념으로 데이터를 저장 및 복원해줄수 있는 것이 필요하며
 > 그 때 사용되는 것이 이 두 가지이다 ! ! ! </br>
@@ -75,7 +75,7 @@ struct SceneStorage: View {
 </br>
 </br>
 
-### 💡 AppStorage
+### 💡 @AppStorage
 
 <img width="50%" alt="image" src="https://github.com/GYURI-PARK/TIL_iOS/assets/93391058/dff85512-2c0f-44d3-ab35-f4a4d9aab1c2">
 
