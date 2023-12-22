@@ -19,6 +19,8 @@
 - [@ObservedObject와 @StateObject의 차이점](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/@ObservedObject와%20@StateObject의%20차이점.md)
 - [@GestureState](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/%40GestureState.md)
 - [ZStack vs overlay vs background](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/ZStack%2C%20overay%2C%20background.md)
+- [@EnvironmentObject](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/%40EnvironmentObject.md)
+- [@SceneStorage와 @AppStorage](https://github.com/GYURI-PARK/TIL_iOS/blob/main/SwiftUI/Extended%20lifetime.md)
 
 </br>
 </br>
